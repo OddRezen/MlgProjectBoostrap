@@ -1,0 +1,338 @@
+/* =====================================
+   MJG Renovations LLC - Global Styles
+   Author: Prince Gentillon
+   ===================================== */
+
+/* -------- Typography -------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #111;
+}
+
+/* Headings brand style */
+h1, h2, h3, .navbar-brand {
+  font-family: 'DM Serif Display', serif;
+}
+
+/* --------------------------------------
+   NAVIGATION BAR
+--------------------------------------- */
+.bg-black {
+  background: #FFFFFF !important;
+}
+
+.navbar-brand {
+  color: #c90000 !important;
+  font-size: 1.8rem;
+}
+
+/* NAVBAR LINKS */
+.navbar .nav-link {
+  color: #000 !important;          /* Black default */
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #c90000 !important;        /* Red on hover */
+}
+
+.navbar .nav-link.active {
+  color: #c90000 !important;        /* Red when active */
+}
+
+/* Toggler icon (hamburger) color fix for white bg */
+.navbar-light .navbar-toggler-icon {
+  filter: brightness(0); /* Makes it black */
+}
+
+
+/* Desktop navbar spacing */
+.navbar {
+  padding: 0.8rem 4rem;
+}
+
+/* Mobile navbar spacing */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0.8rem 1.2rem !important;
+  }
+}
+
+
+.navbar-nav {
+  margin-left: auto;
+  display: flex;
+  gap: 1.5rem;
+}
+
+
+
+
+
+
+/* ================= HERO SECTION ================= */
+
+#hero {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: background-image 0.8s ease-in-out;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+}
+
+/* HERO ARROWS */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+  padding: 0 15px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.hero-arrow:hover {
+  color: #c90000;
+  transform: translateY(-50%) scale(1.15);
+}
+
+.hero-arrow-left {
+  left: 20px;
+}
+
+.hero-arrow-right {
+  right: 20px;
+}
+
+/* Mobile Scaling */
+@media (max-width: 768px) {
+  #hero { height: 60vh; }
+
+  .hero-arrow { 
+    font-size: 2.5rem; 
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
+
+/* --------------------------------------
+   INTRO SECTION
+--------------------------------------- */
+.intro-text {
+  font-size: 1.3rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* --------------------------------------
+   SERVICES SECTION
+--------------------------------------- */
+@media (max-width: 992px) {
+  .services-section .col-md-4 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card img {
+    height: 180px;
+  }
+}
+
+
+
+.services-section {
+  background: #990000; /* Deep red */
+}
+
+
+.card {
+  border: none;
+  border-radius: 8px;
+}
+
+.card img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: .5em;
+}
+
+.card-body {
+  padding: 1.5em;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
+
+/* --------------------------------------
+   GALLERY GRID
+--------------------------------------- */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    width: 95%;
+  }
+
+  .gallery-grid img {
+    height: 200px;
+  }
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 1.5em;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  width: 90%;
+  margin: 3em auto;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+}
+
+/* -------- LIGHTBOX -------- */
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+#lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 8px;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* ===================== FOOTER (White Background) ===================== */
+/* -------- FOOTER -------- */
+.mjg-footer {
+  background: #2b2b2b;     /* dark grey (same as screenshot) */
+  color: #ffffff;
+  border-top: 3px solid #c90000;
+}
+
+/* Logo */
+.footer-logo {
+  color: #c90000 !important;
+  font-family: 'DM Serif Display', serif;
+}
+
+/* Quick action links */
+.footer-action-link {
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.footer-action-link:hover {
+  color: #c90000;
+}
+
+/* Navigation row */
+.footer-nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 8px;
+}
+
+.footer-nav-link:hover {
+  color: #c90000;
+}
+
+.sep {
+  color: #c90000;
+  font-weight: bold;
+}
+
+/* Social icons */
+.footer-social img {
+  filter: brightness(1); /* white look */
+  transition: 0.2s ease;
+}
+
+.footer-social img:hover {
+  transform: scale(1.1);
+  opacity: 0.75;
+}
+
+/* Copyright */
+.footer-bottom {
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.footer-bottom .privacy {
+  color: #c90000;
+  text-decoration: none;
+}
+
+.footer-bottom .privacy:hover {
+  text-decoration: underline;
+}
+
+
+
